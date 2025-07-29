@@ -21,10 +21,15 @@ The output is validated against a ground truth BPR for feedback and optional ref
 ## 📂 Project Structure
 agentic_bpr_poc/
 ├── agents/              # Individual agents (LLM-backed)
+
 ├── workflow.py          # LangGraph DAG definition
+
 ├── main.py              # Entry point CLI
+
 ├── .env.example         # LangSmith/OpenAI key management
+
 ├── requirements.txt     # Dependencies
+
 └── README.md            # Docs
 
 ---
