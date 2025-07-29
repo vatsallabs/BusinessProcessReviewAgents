@@ -7,6 +7,7 @@ This project demonstrates an agentic workflow using LangGraph to generate a Busi
 
 The output is validated against a ground truth BPR for feedback and optional refinement.
 
+All these documents have been generated using LLMs and are dummy in nature and are not a copy of a real document.
 ---
 
 ## Features
