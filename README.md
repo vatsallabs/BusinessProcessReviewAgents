@@ -9,7 +9,7 @@ The output is validated against a ground truth BPR for feedback and optional ref
 
 ---
 
-## 🚀 Features
+## Features
 
 - Modular agent design (Ingestor, Extractor, Synthesizer, Evaluator, Refiner)
 - LangGraph-based stateful workflow with conditional refinement
@@ -18,7 +18,7 @@ The output is validated against a ground truth BPR for feedback and optional ref
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 agentic_bpr_poc/
 ├── agents/              # Individual agents (LLM-backed)
 
@@ -34,7 +34,7 @@ agentic_bpr_poc/
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 1. **Clone Repo & Install Dependencies**
    uv pip install -r requirements.txt
