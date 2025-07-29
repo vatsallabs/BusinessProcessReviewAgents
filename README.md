@@ -37,4 +37,5 @@ agentic_bpr_poc/
 ## Setup
 
 1. **Clone Repo & Install Dependencies**
-   uv pip install -r requirements.txt
+
+- uv pip install -r requirements.txt
