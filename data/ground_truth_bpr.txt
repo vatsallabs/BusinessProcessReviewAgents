@@ -1,0 +1,110 @@
+Business Process Review (BPR)
+BlackRock x Wells Fargo – Trade & Operations Workflow Analysis
+Date: June 20, 2025
+
+———————————————————————
+1. Executive Summary
+———————————————————————
+This BPR documents the current-state operational workflows, technology landscape, pain points, and transformation goals within Wells Fargo Investment Management (WFIM), as discussed with BlackRock. The objective is to identify improvement opportunities and define future-state capabilities for a modern, integrated operating model.
+
+———————————————————————
+2. Organizational Context
+———————————————————————
+- Entity: Wells Fargo Investment Management (WFIM)
+- AUM: ~$600B
+- Client Base: Institutional (pensions, insurance, public funds), sub-advised retail
+- Primary Asset Classes: Fixed Income (focus on municipals, short-duration), Equities, Alternatives, Multi-Asset
+- Regulatory Classification: SEC-Registered Investment Advisor
+- Operating Model: Centralized Ops & Compliance, Shared Services (Tech/Data)
+
+———————————————————————
+3. Platform Landscape (Current State)
+———————————————————————
+| Function                 | Platform/Tool                                | Notes                                             |
+|--------------------------|-----------------------------------------------|--------------------------------------------------|
+| Portfolio Management     | Charles River                                 | Front-office OMS                                  |
+| Trade Execution          | Bloomberg EMSX, TradeWeb                      | Equities and Fixed Income                         |
+| Middle Office (IBOR)     | Proprietary, in-house (legacy)                | Built ~10–12 years ago; brittle architecture      |
+| Risk Analytics           | MSCI RiskMetrics, BRS (static reports), Excel | Fragmented; homegrown spreadsheets in use         |
+| Client Reporting         | Tableau + Manual Aggregation                  | Heavily manual; inconsistent data lineage         |
+| Data Warehouse           | Internal, partial integration with IBOR       | Inconsistent mappings, static data issues         |
+
+———————————————————————
+4. Trade Lifecycle Workflow
+———————————————————————
+**End-to-End Flow:**
+1. PMs create or allocate trades in Charles River.
+2. Traders execute via Bloomberg EMSX / TradeWeb.
+3. Post-trade data (delayed) flows back for compliance checks.
+4. Middle office confirms allocations, triggers custodian messages (SWIFT, file drops).
+5. Manual exception handling via email/Excel.
+
+**Known Issues:**
+- Data Latency: 30-minute delays between OMS ↔ Middle Office.
+- Static data mismatches between systems.
+- Risk of trade breaks in FX/EMD due to timing & formatting errors.
+- No exception management tool; "Shadow OMS" Excel governs many flows.
+
+———————————————————————
+5. Risk Management & Reporting
+———————————————————————
+- Fixed Income: Weekly VaR, stress testing, robust modeling.
+- Equities: Ad-hoc, inconsistent risk frameworks.
+- SMAs: Pricing gaps; approximations common.
+- Reporting: Form PF, 13F, AIFMD – stitched manually from 5+ systems.
+- Tools: Tableau for visualization, no audit trail or lineage tracking.
+
+———————————————————————
+6. Operational Bottlenecks & Manual Dependencies
+———————————————————————
+- Reporting requires extensive Excel cleanup and Tableau formatting.
+- Risk data varies across teams—no centralized truth source.
+- Client reporting complexity due to ESG, attribution, and source system mismatches.
+- Trade breaks and reconciliations handled via email chains.
+
+**Manual Tools in Use:**
+- Excel VBA macros (e.g., “Shadow OMS”)
+- Email folders for exception handling
+- Static CSV drops, FTP file exchanges
+
+———————————————————————
+7. Integration Constraints
+———————————————————————
+| Integration Area         | Current State                                |
+|--------------------------|-----------------------------------------------|
+| OMS ↔ Middle Office       | CSV drop (30-min lag)                         |
+| Custodian ↔ Ops           | SFTP/manual file drops                        |
+| Risk ↔ Front Office       | No direct API or streaming connection         |
+| Reporting Systems         | Manual upload/Excel/Tableau                   |
+
+- No event-driven architecture
+- No real-time APIs
+- MuleSoft/Cloud-native integration considered, not funded
+
+———————————————————————
+8. Strategic Initiatives – In Flight
+———————————————————————
+**"Next Gen Operating Stack" RFP**
+- Evaluating: Aladdin, SimCorp, Clearwater, modular toolkits
+- Drivers:
+  - Consolidation vs Flexibility (CIO vs COO tension)
+  - Desire for unified view across risk, trade, compliance, and reporting
+
+———————————————————————
+9. Future-State Vision
+———————————————————————
+- Real-time dashboards for exposures, trade status, and compliance.
+- Integrated pre- and post-trade checks.
+- Automated regulatory and client reporting with full traceability.
+- Elimination of macros and Excel-based core processes.
+- Event-driven integration and cloud-native architecture.
+
+———————————————————————
+10. Recommendations
+———————————————————————
+- Prioritize integration layer buildout (start with OMS ↔ Risk, OMS ↔ Custodian).
+- Replace legacy IBOR with modern, vendor-supported platform.
+- Implement exception management dashboard (workflow + analytics).
+- Standardize risk models across asset classes.
+- Enhance auditability with lineage tracking for reports.
+- Reduce Excel reliance; decommission “Shadow OMS” gradually.

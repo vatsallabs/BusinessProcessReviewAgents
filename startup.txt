@@ -1,0 +1,6 @@
+python main.py \
+  --transcript ./data/transcript.txt \
+  --questionnaire ./data/questionnaire.txt \
+  --template ./templates/bpr_template.txt \
+  --ground_truth ./data/ground_truth_bpr.txt \
+  --output ./output_bpr.txt

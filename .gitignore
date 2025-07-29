@@ -1,0 +1,16 @@
+# Ignore environment files
+.env
+
+# macOS metadata
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Output files
+output_bpr_*.txt
+
+# IDEs
+.vscode/
+.idea/

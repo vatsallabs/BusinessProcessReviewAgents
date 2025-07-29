@@ -1,0 +1,131 @@
+Unified Client Discovery Questionnaire
+
+1. Company & Investment Policy Context
+	•	Legal Entity Name:
+	•	Entity Type: (e.g., RIA, Hedge Fund, Family Office)
+	•	Assets Under Management (AUM):
+	•	Primary Investment Strategy:
+	•	☐ Equities
+	•	☐ Fixed Income
+	•	☐ Multi-Asset
+	•	☐ Alternatives
+	•	☐ Other: _______
+	•	Regulatory Classification (e.g., SEC-registered, UCITS):
+	•	Key Decision Makers:
+	•	CIO: _______
+	•	COO: _______
+	•	Head of Operations: _______
+	•	Existing Investment/Trade Platforms:
+	•	Order Management System (OMS): _______
+	•	Execution Management System (EMS): _______
+	•	Portfolio Management Platform: _______
+
+⸻
+
+2. Portfolio Workflows & Handoffs
+	•	Describe trade lifecycle workflow:
+	•	From order creation → approval → execution → settlement
+	•	Portfolio Construction Process:
+	•	Who owns allocation decisions?
+	•	Frequency of rebalancing?
+	•	Compliance Checks:
+	•	Pre-trade compliance platform in use?
+	•	Internal Handoffs:
+	•	PM to Trader:
+	•	Trader to Ops:
+	•	Ops to Custodian:
+	•	Manual Processes:
+	•	☐ Trade approvals
+	•	☐ Cash forecasting
+	•	☐ Reconciliations
+	•	☐ Reporting
+	•	☐ Other: _______
+
+⸻
+
+3. Risk Tolerance & Stress Testing
+	•	Risk Methodologies Used:
+	•	☐ VaR
+	•	☐ CVaR
+	•	☐ Historical Stress Tests
+	•	☐ Scenario Analysis
+	•	Maximum Tolerable Drawdown (%): _______
+	•	Stress Test Frequency:
+	•	☐ Daily
+	•	☐ Weekly
+	•	☐ Monthly
+	•	Regulatory Risk Reporting Requirements:
+	•	☐ Form PF
+	•	☐ AIFMD
+	•	☐ Other: _______
+	•	Key Risk Metrics Monitored:
+	•	☐ Tracking Error
+	•	☐ Sharpe Ratio
+	•	☐ Sector/Issuer Limits
+	•	☐ Other: _______
+
+⸻
+
+4. Operational Pain Points & Constraints
+	•	Common Bottlenecks:
+	•	☐ Trade matching
+	•	☐ Reconciliation
+	•	☐ Reporting
+	•	☐ NAV calculation
+	•	☐ Data cleansing
+	•	☐ Other: _______
+	•	Manual Dependencies:
+	•	☐ Excel spreadsheets
+	•	☐ Email-based approvals
+	•	☐ Internal scripts/macros
+	•	Most Frequent Sources of Operational Risk or Delays:
+	•	
+⸻
+
+	•	Resource-Intensive Tasks:
+	•	
+⸻
+
+	•	Desired Automation Opportunities:
+	•	
+⸻
+
+
+⸻
+
+5. Platform Integration & Data Requirements
+	•	Systems to Integrate:
+	•	☐ OMS ↔ Risk
+	•	☐ OMS ↔ Custodian
+	•	☐ Front ↔ Middle/Back Office
+	•	☐ External Data Vendors
+	•	Integration Issues Encountered:
+	•	☐ Format mismatch
+	•	☐ Latency
+	•	☐ API limitations
+	•	☐ Manual upload/downloads
+	•	Current Integration Mechanisms:
+	•	☐ REST API
+	•	☐ FTP / SFTP
+	•	☐ Excel/XML uploads
+	•	☐ Direct DB connection
+	•	Data Sources Consumed:
+	•	☐ Bloomberg
+	•	☐ Refinitiv
+	•	☐ MSCI RiskMetrics
+	•	☐ Internal data warehouse
+	•	☐ Other: _______
+	•	Upcoming Platform Upgrades or Replacements:
+	•	Planned date: _______
+	•	Scope/Objective: _______
+	•	Desired Capabilities from New/Integrated Platforms:
+	•	☐ Unified dashboards
+	•	☐ Real-time trade monitoring
+	•	☐ Advanced risk analytics
+	•	☐ Client reporting automation
+	•	☐ Exception management
+	•	☐ Other: _______
+
+⸻
+
+Would you like me to now convert this Markdown into a styled DOCX or interactive fillable PDF next?

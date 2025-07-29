@@ -1,0 +1,145 @@
+🔊 TRANSCRIPT – Zoom Call: BlackRock x Wells Fargo
+Date: June 20, 2025
+Participants:
+Michael Reilly (BlackRock), Samantha Lee (Wells Fargo)
+[Start of Zoom Recording]
+
+⸻
+
+Michael:
+Hey Samantha—glad we could finally connect. Appreciate you making the time.
+
+Samantha:
+Of course, thanks for setting this up. Been looking forward to digging in.
+
+Michael:
+Yeah, so today I just want to have a pretty relaxed conversation. I’ve got a rough outline of what we want to cover—mostly to understand how your front-to-back flows are set up, what platforms you’re using, and any friction points you’ve got operationally. Risk, integration, trade processing—that kind of thing. But feel free to go off-script wherever you think it’s important.
+
+Samantha:
+Sounds good. It’s probably going to be a bit messy, but I’ll try to give you the honest version of what it’s like day to day.
+
+Michael:
+That’s exactly what we want. Let’s start from the top—just help me understand what the investment business looks like at Wells Fargo today.
+
+Samantha:
+Sure. So we’re Wells Fargo Investment Management, WFIM. We’re technically under the broader Wells Fargo umbrella, but asset management is our own business unit. We’re running about $600 billion across public and private mandates. A big chunk of that is fixed income—we’re huge in municipals, short duration, and some active credit—but we also do equities, a few alternatives, and multi-asset mandates. We’ve got an OCIO arm as well.
+
+Most of the client base is institutional—pensions, insurance, public entities. We’ve also got some sub-advised retail, but I focus more on institutional ops.
+
+Michael:
+And you’re SEC-registered?
+
+Samantha:
+Yeah, we’re a registered investment adviser. We’ve got 40 Act funds, SMAs, a handful of AIFs in Europe. Structurally it’s kind of what you’d expect—desks are broken down by asset class, we’ve got centralized ops and compliance, and then a shared services model across tech and data.
+
+Michael:
+Got it. What’s the tech environment like right now? What platforms are you on, front to back?
+
+Samantha:
+Uh, well… it’s a little Frankenstein. We’re using Charles River for front-office portfolio management—that’s where the PMs live. Trading happens mostly through Bloomberg EMSX. TradeWeb for some FI instruments. Our middle office is running on a proprietary IBOR system—honestly, it’s pretty old. Built it in-house 10, maybe 12 years ago. It does the job, but…
+
+Michael:
+But it’s creaking.
+
+Samantha:
+Exactly. On the risk side, it’s split. Some teams run everything through Excel. Like literally homegrown spreadsheets. Others are pulling risk views from MSCI RiskMetrics. And then we have a feed from BlackRock BRS, but it’s not integrated. It’s a static report they pull weekly, usually used for board decks.
+
+Michael:
+So if I asked for a current real-time risk snapshot…
+
+Samantha:
+[Laughs] You’d get five different answers. We’ve been trying to centralize risk for two years. It’s a work in progress.
+
+Michael:
+And what about the trade lifecycle? Can you walk me through that flow?
+
+Samantha:
+Sure. So a PM starts in Charles River. They either generate orders directly or the allocations come from our overlay team. Orders hit the blotter, the traders pick them up, execution happens through Bloomberg—EMSX usually, sometimes TradeWeb if we’re doing fixed income blocks.
+
+Post-execution, that data is supposed to flow back into Charles River so the compliance checks can run. That’s the theory. But compliance data is usually delayed, and post-trade checks are often running behind. After that, the trade goes to middle office. Allocations are confirmed, custodians are notified, SWIFT messages get triggered or the file gets dropped.
+
+Michael:
+So where do you see issues in that process?
+
+Samantha:
+Honestly? The handoff from trading to middle office is where the real risk is. With vanilla equities it’s fine. But once you get into FX forwards, emerging markets, derivatives—the fail rates go up. Sometimes it’s timing, sometimes it’s a formatting issue, sometimes it’s just that the static data wasn’t aligned.
+
+And we’ve got this monster Excel workbook that’s been duct-taped over the process. Everyone knows about it. It’s got macros, VBA, color-coded tabs. It’s probably doing more to hold the firm together than our actual IBOR.
+
+Michael:
+[Laughs] I’ve seen a few of those.
+
+Samantha:
+Yeah, we call it the “Shadow OMS.”
+
+Michael:
+Okay—let’s shift into risk a bit more. How are you measuring portfolio risk across the desks?
+
+Samantha:
+Depends who you ask. Fixed income has it together. They run VaR, factor decompositions, scenario shocks—usually weekly. Stress tests happen at the book level. They’ve got this simulation environment that works really well.
+
+Equities are looser. We’ve got some teams just looking at beta and tracking error. Others try to run VAR, but the models aren’t consistent. And then with SMAs, you get into situations where we don’t even have proper pricing for the full book. So they just sort of… approximate it.
+
+Michael:
+And reporting? Regulatory obligations?
+
+Samantha:
+We’re filing Form PF quarterly. 13F obviously. For the European strategies, we’ve got AIFMD reports due twice a year. That whole pipeline is stitched together manually—data comes from five different systems, then it’s dumped into Tableau to generate the report. A lot of copying and pasting.
+
+Michael:
+So very little audit trail.
+
+Samantha:
+Yeah, when the auditors come in and ask “where did this number come from?”—we’re basically doing archaeology.
+
+Michael:
+What would you say is the biggest operational drag?
+
+Samantha:
+Client reporting, hands down. The institutional teams demand really granular custom books. Attribution, risk overlays, ESG scores… and we’ve got to pull that from three systems. Our data warehouse isn’t fully synced with the IBOR, so there are always mismatches. And if security classifications don’t align, we have to trace the problem all the way upstream.
+
+Also, trade breaks. Mostly in fixed income, especially emerging market debt. Or FX forwards. Custodian data doesn’t match our trade blotter. And we don’t have any proper exception management tool. It’s all email. Someone creates a folder in Outlook and starts replying all. That’s the process.
+
+Michael:
+[Laughs] That sounds painful.
+
+Samantha:
+It is. We’ve scoped out exception dashboards before, but it always gets shelved for higher-priority tech projects.
+
+Michael:
+Let’s talk about platform integration. Are any of these systems talking to each other?
+
+Samantha:
+Not in real time. Charles River dumps a CSV to our middle-office system on a 30-minute delay. Custodian files come in via SFTP—sometimes hourly, sometimes overnight. Risk pulls data from a shared drive. We don’t have APIs in place. There’s no event-driven architecture. It’s all file drops and batch jobs.
+
+We’ve floated the idea of building a proper integration layer—maybe cloud-native, maybe MuleSoft—but it never made the budget round.
+
+Michael:
+And is that changing?
+
+Samantha:
+Maybe. We’re in the middle of a big RFP. We’re calling it our “Next Gen Operating Stack.” Evaluating everything from full front-to-back platforms—Aladdin’s on the table, SimCorp, Clearwater—to more modular, build-your-own architectures.
+
+The CIO wants consolidation. The COO wants flexibility. It’s a debate. But I think everyone agrees we need something better than what we have now.
+
+Michael:
+What would success look like, if you had to define it in terms of platform capabilities?
+
+Samantha:
+Honestly? I’d love one dashboard where I can see exposures, trade status, upcoming cash flows. I want integrated compliance checks, both pre and post. Automated reporting that I don’t have to QA every time. And I need traceability—where did this number come from, and who touched it last.
+
+Right now we have all those things—but they live in five different systems, and none of them talk. We’re basically held together by email, macros, and smart people improvising.
+
+Michael:
+That’s super helpful, Samantha. Really appreciate how honest and detailed you were. I’ll take all of this back to the team and we’ll start drafting some possible solution architectures. Maybe give you one that’s minimally disruptive, and another that’s more of a strategic rebuild.
+
+Samantha:
+Sounds good. I’m happy to go deeper into any of these areas. Just say the word.
+
+Michael:
+Will do. Thanks again.
+
+⸻
+
+[End of Transcript]
+Duration: 57 minutes

@@ -1,0 +1,98 @@
+Business Process Review Template
+[Client: _________]   [Date: _________]
+Prepared by: ___________ | Reviewed by: ___________
+
+———————————————————————
+1. Executive Summary
+———————————————————————
+Brief summary of engagement purpose, business context, and review scope.
+
+———————————————————————
+2. Organizational Overview
+———————————————————————
+- Entity Name:
+- AUM:
+- Primary Strategies (Equities, FI, Multi-Asset, Alternatives):
+- Regulatory Classification:
+- Client Base:
+- Key Decision Makers:
+  - CIO:
+  - COO:
+  - Head of Ops:
+
+———————————————————————
+3. Technology Stack – Current State
+———————————————————————
+| Function                | Platform Used               | Notes                               |
+|-------------------------|-----------------------------|-------------------------------------|
+| Portfolio Management    |                             |                                     |
+| Order Execution         |                             |                                     |
+| IBOR / Middle Office    |                             |                                     |
+| Risk Analytics          |                             |                                     |
+| Client Reporting        |                             |                                     |
+| Compliance / Audit      |                             |                                     |
+
+———————————————————————
+4. Trade Lifecycle & Workflows
+———————————————————————
+- Order Creation:
+- Trade Execution Channels:
+- Post-Trade Processing:
+- Compliance Checks:
+- Custodian Notification & Settlement:
+- Manual Hand-Offs:
+
+Key Issues:
+- [ ] Timing Delays
+- [ ] Formatting Errors
+- [ ] Inconsistent Compliance Flags
+- [ ] Shadow Systems (Excel, Email Chains)
+
+———————————————————————
+5. Risk Management Overview
+———————————————————————
+- Methodologies Used:
+  - [ ] VaR
+  - [ ] Scenario Analysis
+  - [ ] Stress Tests
+- Frequency of Review:
+- Tools Used:
+- Data Gaps or Model Fragmentation:
+- Regulatory Reporting Pipeline:
+
+———————————————————————
+6. Operational Pain Points
+———————————————————————
+- Trade Breaks:
+- Reconciliations:
+- Data Alignment:
+- Reporting Delays:
+- Manual Dependencies (e.g., Excel, macros, FTPs):
+- Legacy Systems Risks:
+
+———————————————————————
+7. Integration & Data Flow
+———————————————————————
+| Source            | Target             | Method (API/SFTP/CSV) | Issues (Latency, Format, etc) |
+|-------------------|--------------------|------------------------|-------------------------------|
+|                   |                    |                        |                               |
+
+- Integration Strategy (Event-Driven, Batch, Hybrid):
+- External Vendors Involved:
+
+———————————————————————
+8. Change Initiatives & Roadmap
+———————————————————————
+- Ongoing RFPs or Tech Transformation?
+- Desired End-State Architecture:
+  - Unified Dashboard
+  - Real-time Monitoring
+  - Automated Compliance
+  - Exception Management
+
+———————————————————————
+9. Recommendations & Next Steps
+———————————————————————
+✔ Short-Term Remediations:
+✔ Medium-Term Priorities:
+✔ Strategic Goals:
